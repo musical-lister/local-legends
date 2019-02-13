@@ -8,8 +8,8 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Adlister!</h1>
+    <div class="container ">
+        <h1 class="text-center">Welcome to Local Legends</h1>
     </div>
 </body>
 </html>
