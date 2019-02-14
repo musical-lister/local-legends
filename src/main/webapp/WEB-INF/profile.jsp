@@ -12,5 +12,12 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
 
+    <div class="container">
+        <h4>Here are your posts!</h4>
+
+    </div>
+
+    <button class="btn-secondary" onclick="window.location.href = '/ads/create';">Create Ad</button>
+
 </body>
 </html>

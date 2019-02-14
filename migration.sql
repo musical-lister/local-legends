@@ -5,8 +5,8 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    username VARCHAR(240) NOT NULL,
-    email VARCHAR(240) NOT NULL,
+    username VARCHAR(240) NOT NULL unique,
+    email VARCHAR(240) NOT NULL unique,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
