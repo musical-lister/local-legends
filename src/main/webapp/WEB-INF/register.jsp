@@ -5,7 +5,7 @@
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
     <style>
-        input:focus:required:invalid {background-color: red;}
+        input:focus:required:invalid {border-color: red;}
         input:required:valid {background-color: white; color: black;}
     </style>
 </head>
@@ -16,11 +16,11 @@
         <form action="/register" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text" pattern="[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" required autofocus>
+                <input id="username" name="username" class="form-control" type="text" pattern="[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" min="6" max="20" title="Must contain at least 6 to 20 characters" value="${sessionScope.username}" required autofocus>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" name="email" class="form-control" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                <input id="email" name="email" class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email" value="${sessionScope.email}" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
