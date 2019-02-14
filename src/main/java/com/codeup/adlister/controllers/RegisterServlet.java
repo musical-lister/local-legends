@@ -25,19 +25,16 @@ public class RegisterServlet extends HttpServlet {
 
         String hashPassword = Password.hash(password);
 
-//        boolean check1 = Password.check(password, hashPassword);
-//        boolean check2 = Password.check(passwordConfirmation, hashPasswordConfirmation);
-
-
         // validate input
         boolean inputHasErrors = username.isEmpty()
             || email.isEmpty()
             || password.isEmpty()
             || (!password.equals(passwordConfirmation));
-//            || check1 != check2;
 
         if (inputHasErrors) {
             response.sendRedirect("/register");
+
+            // needs function for error reporting
             return;
         }
 
