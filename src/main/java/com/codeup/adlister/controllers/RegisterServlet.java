@@ -42,10 +42,7 @@ public class RegisterServlet extends HttpServlet {
 
         // create and save a new user
         User user = new User(username, email, hashPassword);
-        DaoFactory.getUsersDao().insert(user);
-        if (DaoFactory.getUsersDao().insert(user) == -9000){
-            request.setAttribute("username", username);
-            request.setAttribute("email",email);
+        if (DaoFactory.getUsersDao().insert(user) == -90L){
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
         }
         response.sendRedirect("/login");
