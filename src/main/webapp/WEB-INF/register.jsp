@@ -4,6 +4,10 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Register For Our Site!" />
     </jsp:include>
+    <style>
+        input:focus:required:invalid {background-color: red;}
+        input:required:valid {background-color: white; color: black;}
+    </style>
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
