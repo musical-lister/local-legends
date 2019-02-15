@@ -39,7 +39,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> filterByUser(int usr) {
+    public List<Ad> filterByUser(long usr) {
         PreparedStatement stmt = null;
         try {
             stmt = connection.prepareStatement("SELECT * FROM ads where user_id = " + usr);

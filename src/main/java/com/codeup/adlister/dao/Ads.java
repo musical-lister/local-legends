@@ -10,5 +10,5 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
     // lists a filtered ad
-    List<Ad> filterByUser(int usr);
+    List<Ad> filterByUser(long usr);
 }

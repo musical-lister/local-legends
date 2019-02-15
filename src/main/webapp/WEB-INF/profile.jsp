@@ -16,10 +16,11 @@
     <div class="container">
         <h4>Here are your posts!</h4>
         <c:forEach var="ad" items="${ads}">
-                <div class="col-md-6">
-                    <h2>${ad.title}</h2>
-                    <p>${ad.description}</p>
-                </div>
+        <div class="col-md-6">
+            <h2>${ad.title}</h2>
+            <button onclick="window.location.href = 'ads/edit'">Edit</button>
+            <p>${ad.description}</p>
+        </div>
         </c:forEach>
     </div>
 
