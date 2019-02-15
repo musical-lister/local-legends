@@ -24,27 +24,24 @@ public class RegisterServlet extends HttpServlet {
         String passwordConfirmation = request.getParameter("confirm_password");
 
         String hashPassword = Password.hash(password);
-
         // boolean check1 = Password.check(password, hashPassword);
         // boolean check2 = Password.check(passwordConfirmation, hashPasswordConfirmation);
-
         // validate input
         boolean inputHasErrors = username.isEmpty()
-            || email.isEmpty()
-            || password.isEmpty()
-            || (!password.equals(passwordConfirmation));
-        // || check1 != check2;
+                || email.isEmpty()
+                || password.isEmpty()
+                || (!password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
-            response.sendRedirect("/register");
-            return;
-        }
-
-        // create and save a new user
-        User user = new User(username, email, hashPassword);
-        if (DaoFactory.getUsersDao().insert(user) == -90L){
+            request.setAttribute("username", username);
+            request.setAttribute("email", email);
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+            response.sendRedirect("/register");
+        } else {
+            User user = new User(username, email, hashPassword);
+            DaoFactory.getUsersDao().insert(user);
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+            response.sendRedirect("/login");
         }
-        response.sendRedirect("/login");
     }
 }

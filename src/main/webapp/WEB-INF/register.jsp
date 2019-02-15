@@ -16,11 +16,11 @@
         <form action="/register" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text" pattern="[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" min="6" max="20" title="Must contain at least 6 to 20 characters" value="${sessionScope.username}" required autofocus>
+                <input id="username" name="username" class="form-control" type="text" pattern="[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+).{5,10}*$" title="Must contain at least 6 to 20 characters" value="${requestScope.username}" required autofocus>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" name="email" class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email" value="${sessionScope.email}" required>
+                <input id="email" name="email" class="form-control" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email" value="${email}" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
