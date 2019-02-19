@@ -8,6 +8,10 @@
                     <a class="navbar-brand" href="/ads">Local Legends</a>
                 </div>
 
+                <form action="/ads" class="form-inline">
+                    <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
+                </form>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/logout">Logout</a></li>
@@ -20,6 +24,10 @@
                     <a class="navbar-brand" href="/">Local Legends</a>
                 </div>
 
+                <form action="/ads" class="form-inline">
+                    <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
+                </form>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
@@ -29,3 +37,5 @@
         </c:choose>
     </div>
 </nav>
+
+
