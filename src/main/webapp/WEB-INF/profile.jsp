@@ -18,8 +18,8 @@
         <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
-            <button onclick="window.location.href = 'ads/edit'">Edit</button>
             <p>${ad.description}</p>
+            <button onclick="window.location.href = 'ads/edit'">Edit</button>
         </div>
         </c:forEach>
     </div>

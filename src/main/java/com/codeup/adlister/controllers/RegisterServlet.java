@@ -32,8 +32,8 @@ public class RegisterServlet extends HttpServlet {
                 || (!password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
-            request.setAttribute("username", username);
-            request.setAttribute("email", email);
+            request.getSession().setAttribute("stickyUser", username);
+            request.getSession().setAttribute("stickyEmail", email);
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
             response.sendRedirect("/register");
         } else {
