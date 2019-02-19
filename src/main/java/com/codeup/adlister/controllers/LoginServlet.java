@@ -29,6 +29,8 @@ public class LoginServlet extends HttpServlet {
 
         if (user == null) {
             response.sendRedirect("/login");
+            request.getSession().setAttribute("stickyUser", username);
+
             return;
         }
 
@@ -39,6 +41,8 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");
+            request.getSession().setAttribute("stickyUser", username);
+
         }
     }
 }
