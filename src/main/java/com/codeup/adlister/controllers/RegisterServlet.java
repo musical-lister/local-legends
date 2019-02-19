@@ -22,8 +22,8 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
-
         String hashPassword = Password.hash(password);
+
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
@@ -32,7 +32,11 @@ public class RegisterServlet extends HttpServlet {
             || (!password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
+            request.getSession().setAttribute("stickyUser", username);
+            request.getSession().setAttribute("stickyEmail", email);
             response.sendRedirect("/register");
+//            System.out.println("Testing for input errors");
+
 
             // needs function for error reporting
             return;

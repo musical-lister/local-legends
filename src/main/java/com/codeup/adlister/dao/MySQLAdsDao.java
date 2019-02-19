@@ -74,17 +74,17 @@ public class MySQLAdsDao implements Ads {
         return ads;
     }
 
-    // SEARCH ADDS STILL NEEDS TO BE IMPLEMENTED INTO THE SEARCH BAR
-
+    // Ads
     public List<Ad> searchAds (String searchTerm) {
-        String qry = "SELECT * FROM ads WHERE title LIKE \'" + searchTerm + "%\'";
+        String qry = "SELECT * FROM ads WHERE (title LIKE \'" + searchTerm + "%\') OR (title LIKE \'%" + searchTerm + "\')";
+        List<Ad> searchResults;
         try {
             PreparedStatement stmt = connection.prepareStatement(qry);
             ResultSet rs = stmt.executeQuery();
-            rs.next();
-            return createAdsFromResults(rs);
+            searchResults = createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Could not find any ads with \"" + searchTerm + "\" in the title.", e);
         }
+        return searchResults;
     }
 }
