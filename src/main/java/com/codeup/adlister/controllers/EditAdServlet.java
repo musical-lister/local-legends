@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
-public class CreateAdServlet extends HttpServlet {
+@WebServlet(name = "controllers.EditAdServlet", urlPatterns = "/ads/edit")
+public class EditAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-            .forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/ads/edit.jsp")
+                .forward(request, response);
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
         }
@@ -24,9 +24,9 @@ public class CreateAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User userSession = (User) request.getSession().getAttribute("user");
         Ad ad = new Ad(
-            userSession.getId(), // for now we'll hardcode the user id
-            request.getParameter("title"),
-            request.getParameter("description")
+                userSession.getId(), // for now we'll hardcode the user id
+                request.getParameter("title"),
+                request.getParameter("description")
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");

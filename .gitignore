@@ -2,4 +2,7 @@
 target/
 .idea/
 Config.java
+.classpath
+.project
+.settings/
 node_modules/
