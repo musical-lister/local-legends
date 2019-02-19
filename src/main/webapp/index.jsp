@@ -11,5 +11,5 @@
     <div class="container bg-primary ">
         <h1 class="text-center">Welcome to Local Legends</h1>
     </div>
-</body>
+    </body>
 </html>
