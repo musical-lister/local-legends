@@ -1,6 +1,8 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
+import com.mysql.cj.api.mysqla.result.Resultset;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -82,5 +84,19 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    // Ads
+    public List<Ad> searchAds (String searchTerm) {
+        String qry = "SELECT * FROM ads WHERE (title LIKE \'" + searchTerm + "%\') OR (title LIKE \'%" + searchTerm + "\')";
+        List<Ad> searchResults;
+        try {
+            PreparedStatement stmt = connection.prepareStatement(qry);
+            ResultSet rs = stmt.executeQuery();
+            searchResults = createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Could not find any ads with \"" + searchTerm + "\" in the title.", e);
+        }
+        return searchResults;
     }
 }

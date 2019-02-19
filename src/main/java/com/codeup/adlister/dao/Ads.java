@@ -11,4 +11,6 @@ public interface Ads {
     Long insert(Ad ad);
     // lists a filtered ad
     List<Ad> filterByUser(long usr);
+    // search function for ads
+    List<Ad> searchAds(String searchTerm);
 }
