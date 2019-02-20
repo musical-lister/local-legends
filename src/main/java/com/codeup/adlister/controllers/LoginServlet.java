@@ -18,6 +18,8 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/profile");
             return;
         }
+        request.getSession().setAttribute("loginMessage", "Please Login");
+
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
@@ -30,18 +32,19 @@ public class LoginServlet extends HttpServlet {
         if (user == null) {
             response.sendRedirect("/login");
             request.getSession().setAttribute("stickyUser", username);
+            request.getSession().setAttribute("validAttempt", false);
+            request.getSession().setAttribute("errorMessageLogin", "Either username or password is incorrect. Please try again.");
             return;
         }
 
         boolean validAttempt = Password.check(password, user.getPassword())
-                            & !DaoFactory.getUsersDao().isAlreadyRegistered(username);
+                || DaoFactory.getUsersDao().isAlreadyRegisteredUsername(username);
 
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
         } else {
             request.getSession().setAttribute("stickyUser", username);
-            request.getSession().setAttribute("validAttempt", false);
             response.sendRedirect("/login");
 
 

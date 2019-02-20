@@ -35,11 +35,24 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public boolean isAlreadyRegistered (String input) {
-        String qry = "SELECT * FROM users WHERE email = ?";
+    public boolean isAlreadyRegisteredUsername (String username) {
         try {
+            String qry = "SELECT * FROM users WHERE username = ?";
             PreparedStatement stmt = connection.prepareStatement(qry);
-            stmt.setString(1, input);
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error referencing the database", e);
+        }
+    }
+
+    @Override
+    public boolean isAlreadyRegisteredEmail (String email) {
+        try {
+            String qry = "SELECT * FROM users WHERE email = ?";
+            PreparedStatement stmt = connection.prepareStatement(qry);
+            stmt.setString(1, email);
             ResultSet rs = stmt.executeQuery();
             return rs.next();
         } catch (SQLException e) {
