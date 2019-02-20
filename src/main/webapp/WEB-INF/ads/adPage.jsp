@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,8 +9,11 @@
 </head>
 <body>
 <jsp:include page="../partials/navbar.jsp" />
-<div>
-    <h1>its working!!!</h1>
+<div class="text-center">
+    <%--<img src="${adImage}">--%>
+    <h1>${adTitle}</h1>
+    <p>${adDescription}</p>
 </div>
+<jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>

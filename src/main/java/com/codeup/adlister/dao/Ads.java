@@ -14,6 +14,10 @@ public interface Ads {
     List<Ad> filterByUser(long usr);
     // search function for ads
     List<Ad> searchAds(String searchTerm);
-
+    //displays a single ad in page
     Ad singleAd (long adId) throws SQLException;
+    //deletes the ad
+    void deleteAd(long ad_id) throws SQLException;
+    //deletes the categories related to ad deletion
+    void deleteCategories(long ad_cat) throws SQLException;
 }
