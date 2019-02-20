@@ -5,12 +5,11 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container bg-primary ">
-        <h1 class="text-center">Welcome to Local Legends</h1>
-    </div>
+    <div class="landingPage"></div>
     <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
