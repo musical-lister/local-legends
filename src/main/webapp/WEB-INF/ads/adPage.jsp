@@ -9,13 +9,8 @@
 </head>
 <body>
 <jsp:include page="../partials/navbar.jsp" />
-<c:forEach var = "ad" items="${ads}">
-        <c:set var = "adID" value="${ad.id}"/>
-        <c:if test="${fn:endsWith(pageContext.request.requestURI, adID)}">
-                <h1>its working!!!</h1>
-                <p>ad id: ${ad.id}</p>
-        </c:if>
-</c:forEach>
+<h1>${adTitle}</h1>
+<p>${adDescription}</p>
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
