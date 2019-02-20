@@ -9,8 +9,11 @@
 </head>
 <body>
 <jsp:include page="../partials/navbar.jsp" />
-<h1>${adTitle}</h1>
-<p>${adDescription}</p>
+<div class="text-center">
+    <%--<img src="${adImage}">--%>
+    <h1>${adTitle}</h1>
+    <p>${adDescription}</p>
+</div>
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
