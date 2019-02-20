@@ -17,14 +17,15 @@
         <h4>Here are your posts!</h4>
         <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <button onclick="window.location.href = 'ads/edit?editID=${ad.id}'">Edit</button>
+            <a href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
+
             <p>${ad.description}</p>
+            <button onclick="window.location.href = 'ads/edit'">Edit</button>
         </div>
         </c:forEach>
     </div>
 
     <button class="btn-secondary" onclick="window.location.href = '/ads/create';">Create Ad</button>
-
+<jsp:include page="partials/foot.jsp"/>
 </body>
 </html>

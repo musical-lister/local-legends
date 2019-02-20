@@ -10,6 +10,7 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Please Log In</h1>
+
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -25,5 +26,6 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
+<jsp:include page="partials/foot.jsp"/>
 </body>
 </html>

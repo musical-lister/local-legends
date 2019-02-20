@@ -15,7 +15,7 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
-    public MySQLAdsDao(Config config) {
+    MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -98,5 +98,15 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Could not find any ads with \"" + searchTerm + "\" in the title.", e);
         }
         return searchResults;
+    }
+
+    @Override
+    public Ad singleAd(long adId) throws SQLException {
+        String qry = "SELECT * FROM ads WHERE id = ?";
+        PreparedStatement stmt = connection.prepareStatement(qry);
+        stmt.setLong(1, adId);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        return extractAd(rs);
     }
 }
