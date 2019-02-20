@@ -17,7 +17,7 @@
         <h4>Here are your posts!</h4>
         <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2>${ad.title}</h2>
+            <a href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
             <p>${ad.description}</p>
             <button onclick="window.location.href = 'ads/edit'">Edit</button>
         </div>
