@@ -37,10 +37,10 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        boolean validAttempt = Password.check(password, user.getPassword())
-                || DaoFactory.getUsersDao().isAlreadyRegisteredUsername(username);
+        boolean validAttempt = DaoFactory.getUsersDao().isAlreadyRegisteredUsername(username) & Password.check(password, user.getPassword());
 
         if (validAttempt) {
+            request.getSession().setAttribute("validAttempt", true);
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
         } else {
