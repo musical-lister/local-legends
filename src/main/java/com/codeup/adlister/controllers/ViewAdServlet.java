@@ -21,8 +21,8 @@ public class ViewAdServlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         System.out.println(id);
         try {
-            Ad oneAd = getAdsDao().singleAd(id);
-            System.out.println(oneAd.getTitle());
+            Ad singleAd = getAdsDao().singleAd(id);
+            System.out.println(singleAd.getTitle());
         } catch (SQLException e) {
             e.printStackTrace();
         }
