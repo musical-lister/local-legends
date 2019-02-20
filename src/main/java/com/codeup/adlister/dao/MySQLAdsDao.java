@@ -109,4 +109,21 @@ public class MySQLAdsDao implements Ads {
         rs.next();
         return extractAd(rs);
     }
+
+    @Override
+    public void deleteCategories(long ad_id) throws SQLException {
+        String deleteQuery = "DELETE FROM ads_categories WHERE ad_id = ?";
+        PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+        stmt.setLong(1, ad_id);
+        stmt.executeUpdate();
+
+    }
+
+    @Override
+    public void deleteAd (long id) throws SQLException {
+        String deleteQuery = "DELETE FROM ads WHERE id = ?";
+        PreparedStatement stmt = connection.prepareStatement(deleteQuery);
+        stmt.setLong(1, id);
+        stmt.executeUpdate();
+    }
 }

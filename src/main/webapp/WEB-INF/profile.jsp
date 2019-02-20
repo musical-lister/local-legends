@@ -20,7 +20,7 @@
             <a href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
 
             <p>${ad.description}</p>
-            <button onclick="window.location.href = 'ads/edit'">Edit</button>
+            <button class="btn btn-danger" onclick="window.location.href = 'ads/delete?AdID=${ad.id}'">Delete</button>
         </div>
         </c:forEach>
     </div>
