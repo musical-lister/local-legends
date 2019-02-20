@@ -23,24 +23,32 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
         String hashPassword = Password.hash(password);
+
+
+
+
         // boolean check1 = Password.check(password, hashPassword);
         // boolean check2 = Password.check(passwordConfirmation, hashPasswordConfirmation);
         // validate input
         boolean inputHasErrors = username.isEmpty()
                 || email.isEmpty()
                 || password.isEmpty()
-                || (!password.equals(passwordConfirmation));
+                || (!password.equals(passwordConfirmation))
+                || DaoFactory.getUsersDao().isAlreadyRegistered(email);
+
 
         if (inputHasErrors) {
-            request.setAttribute("username", username);
-            request.setAttribute("email", email);
+            request.getSession().setAttribute("errorMessage", "There was an error with your credentials.");
+            request.getSession().setAttribute("inputHasErrors", true);
+            request.getSession().setAttribute("stickyUser", username);
+            request.getSession().setAttribute("stickyEmail", email);
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
-            response.sendRedirect("/register");
-        } else {
+        }
+        else {
+            request.getSession().setAttribute("inputHasErrors", false);
             User user = new User(username, email, hashPassword);
             DaoFactory.getUsersDao().insert(user);
-            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
-            response.sendRedirect("/login");
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
         }
     }
 }

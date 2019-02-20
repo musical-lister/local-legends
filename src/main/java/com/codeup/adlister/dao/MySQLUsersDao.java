@@ -35,6 +35,21 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
+    public boolean isAlreadyRegistered (String input) {
+        String qry = "SELECT * FROM users WHERE email = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(qry);
+            stmt.setString(1, input);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error referencing the database", e);
+        }
+    }
+
+
+
+    @Override
     public Long insert(User user) {
         String query = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
         try {
@@ -62,4 +77,5 @@ public class MySQLUsersDao implements Users {
             rs.getString("password")
         );
     }
+
 }

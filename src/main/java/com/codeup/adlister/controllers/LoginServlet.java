@@ -30,18 +30,20 @@ public class LoginServlet extends HttpServlet {
         if (user == null) {
             response.sendRedirect("/login");
             request.getSession().setAttribute("stickyUser", username);
-
             return;
         }
 
-        boolean validAttempt = Password.check(password, user.getPassword());
+        boolean validAttempt = Password.check(password, user.getPassword())
+                            & !DaoFactory.getUsersDao().isAlreadyRegistered(username);
 
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
         } else {
-            response.sendRedirect("/login");
             request.getSession().setAttribute("stickyUser", username);
+            request.getSession().setAttribute("validAttempt", false);
+            response.sendRedirect("/login");
+
 
         }
     }
