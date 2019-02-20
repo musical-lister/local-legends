@@ -99,4 +99,14 @@ public class MySQLAdsDao implements Ads {
         }
         return searchResults;
     }
+
+    @Override
+    public Ad singleAd(long adId) throws SQLException {
+        String qry = "SELECT * FROM ads WHERE id = ?";
+        PreparedStatement stmt = connection.prepareStatement(qry);
+        stmt.setLong(1, adId);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        return extractAd(rs);
+    }
 }

@@ -25,6 +25,6 @@
     </div>
 
     <button class="btn-secondary" onclick="window.location.href = '/ads/create';">Create Ad</button>
-
+<jsp:include page="partials/foot.jsp"/>
 </body>
 </html>
