@@ -17,6 +17,15 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text" required></textarea>
             </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                    </div>
+                </div>
+                <p></p>
+            </div>
+
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>

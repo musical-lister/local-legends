@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,6 +20,9 @@
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
             </div>
+            <c:if test="${sessionScope.validAttempt == false}">
+                <jsp:include page="partials/messages.jsp"/>
+            </c:if>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
