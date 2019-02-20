@@ -12,11 +12,12 @@
     <h1>${searchMessage}</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
+        <div class="col-6">
             <a href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
             <p>${ad.description}</p>
         </div>
     </c:forEach>
 </div>
+<jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
