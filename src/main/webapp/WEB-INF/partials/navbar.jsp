@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <c:choose>
             <c:when test="${sessionScope.user != null}">
-
                 <nav class="navbar navbar-expand-lg navbar-dark" style="background: #271919;">
                     <a class="navbar-brand" href="/ads">Local Legends</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,10 +70,6 @@
                         </form>
                     </div>
                 </nav>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
             </c:otherwise>
         </c:choose>
 

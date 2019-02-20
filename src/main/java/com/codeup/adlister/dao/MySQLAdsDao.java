@@ -88,7 +88,7 @@ public class MySQLAdsDao implements Ads {
 
     // Ads
     public List<Ad> searchAds (String searchTerm) {
-        String qry = "SELECT * FROM ads WHERE (title LIKE \'" + searchTerm + "%\') OR (title LIKE \'%" + searchTerm + "\')";
+        String qry = "SELECT * FROM ads WHERE title LIKE \'%" + searchTerm + "%\'";
         List<Ad> searchResults;
         try {
             PreparedStatement stmt = connection.prepareStatement(qry);

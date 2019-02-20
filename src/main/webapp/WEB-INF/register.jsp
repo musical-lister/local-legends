@@ -31,7 +31,7 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
             </div>
-                <c:if test="${sessionScope.inputHasErrors !=null}">
+                <c:if test="${sessionScope.inputHasErrors ==true}">
             <jsp:include page="partials/messages.jsp"/>
                 </c:if>
             <input type="submit" class="btn btn-primary btn-block">
