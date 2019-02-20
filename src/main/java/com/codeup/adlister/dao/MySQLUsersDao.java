@@ -41,8 +41,6 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(qry);
             stmt.setString(1, input);
             ResultSet rs = stmt.executeQuery();
-            System.out.println(rs.next());
-            System.out.println(stmt);
             return rs.next();
         } catch (SQLException e) {
             throw new RuntimeException("Error referencing the database", e);

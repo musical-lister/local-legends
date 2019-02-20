@@ -38,6 +38,7 @@ public class RegisterServlet extends HttpServlet {
 
 
         if (inputHasErrors) {
+            request.getSession().setAttribute("errorMessage", "There was an error with your credentials.");
             request.getSession().setAttribute("inputHasErrors", true);
             request.getSession().setAttribute("stickyUser", username);
             request.getSession().setAttribute("stickyEmail", email);
