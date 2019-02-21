@@ -8,9 +8,11 @@
 </head>
 <body class="loginPage">
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
     <div class="box mt-3">
         <div class="container p-3">
             <h1><c:out value="${loginMessage}"/></h1>
+
 
             <form action="/login" method="POST">
                 <div class="form-group">

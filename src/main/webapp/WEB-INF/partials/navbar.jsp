@@ -3,10 +3,27 @@
             <c:when test="${sessionScope.user != null}">
                 <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(39,25,25, .7)">
                     <a class="navbar-brand" href="/ads">Local Legends</a>
+                        <%--search bar--%>
+                        <form action="/ads" class="form-inline my-2 my-lg-0">
+                            <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        <%--categories--%>
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Venue</a>
+                                    <a class="dropdown-item" href="#">Music</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        <%--dropdown menu--%>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
@@ -18,7 +35,20 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/settings">Settings</a>
                             </li>
-                            <li class="nav-item dropdown">
+                        </ul>
+                    </div>
+                </nav>
+            </c:when>
+            <c:otherwise>
+                <nav class="navbar navbar-expand-lg navbar-dark" style="background: #271919;">
+                    <a class="navbar-brand" href="/ads">Local Legends</a>
+                    <%--search bar--%>
+                        <form action="/ads" class="form-inline my-2 my-lg-0">
+                            <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    <%--categories--%>
+                            <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Categories
                                 </a>
@@ -29,6 +59,7 @@
                                     <a class="dropdown-item" href="#">Merchandise</a>
                                     <%--<div class="dropdown-divider"></div>--%>
                                 </div>
+<<<<<<< HEAD
                             </li>
                         </ul>
                         <form action="/ads" class="form-inline my-2 my-lg-0">
@@ -41,18 +72,27 @@
             <c:otherwise>
                 <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(39,25,25, .7);">
                     <a class="navbar-brand" href="/ads">Local Legends</a>
+=======
+                            </div>
+                        <%--dropdown menu--%>
+>>>>>>> master
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<<<<<<< HEAD
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
+=======
+                        <ul class="navbar-nav mr-auto ">
+                            <li class="nav-item active">
+>>>>>>> master
                                 <a class="nav-link" href="/login">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/register">Register</a>
                             </li>
+<<<<<<< HEAD
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Categories
@@ -64,11 +104,9 @@
                                     <a class="dropdown-item" href="#">Merchandise</a>
                                 </div>
                             </li>
+=======
+>>>>>>> master
                         </ul>
-                        <form action="/ads" class="form-inline my-2 my-lg-0">
-                            <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-                        </form>
                     </div>
                 </nav>
             </c:otherwise>
