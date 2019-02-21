@@ -1,12 +1,22 @@
 body, html {
     height: 100%;
+    font-family: Montserrat, sans-serif;
 }
 a {
     color: #FC3844;
 }
 a:hover {
     text-decoration: none;
-    color: #FCC624;
+    color: #FDBF03;
+}
+div.box {
+    margin: 10%;
+    background: rgba(39,25,25, .7);
+    border: 1px solid rgba(39,25,25, .7);
+}
+h1.localLegends {
+    margin: 5%;
+    color: #FDBF03;
 }
 .vertical {
     margin-top: 50%;
@@ -28,3 +38,52 @@ a:hover {
      background-image: linear-gradient(top ,white, black);
      opacity: .6;
  }
+.loginPage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bar-blur-business-1860668.jpg') center center no-repeat;
+    background-size: cover;
+    color: white;
+}
+.adsPage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bar-blur-business-1860668.jpg') center center no-repeat;
+    background-size: cover;
+    color: #FDBF03;
+}
+
+.profilePage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bar-blur-business-1860668.jpg') center center no-repeat;
+    background-size: cover;
+    color: #FDBF03;
+}
+.adPage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/audience-band-bright-1047442.jpg') center center no-repeat;
+    background-size: cover;
+    color: #FDBF03;
+}
+.registerPage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bar-blur-business-1860668.jpg') center center no-repeat;
+    background-size: cover;
+    color: white;
+}
+.createPage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('../images/audience-band-bright-1047442.jpg') center center no-repeat;
+    background-size: cover;
+    color: #FDBF03;
+}

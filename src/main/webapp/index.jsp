@@ -5,11 +5,15 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
-    <link href="css/main.css" rel="stylesheet">
 </head>
-<body>
+<body class="landingPage">
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="landingPage"></div>
+        <div class="box mt-3">
+            <div class="container">
+            <h1 class="localLegends">Welcome to Local Legends</h1>
+            <p style="margin-left: 15%; color: #FCC624;">Musical Adlister</p>
+            </div>
+        </div>
     <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
