@@ -1,13 +1,9 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
-import com.codeup.adlister.models.User;
-import com.mysql.cj.api.mysqla.result.Resultset;
+import com.codeup.adlister.models.Category;
 import com.mysql.cj.jdbc.Driver;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -108,6 +104,39 @@ public class MySQLAdsDao implements Ads {
         ResultSet rs = stmt.executeQuery();
         rs.next();
         return extractAd(rs);
+    }
+
+    @Override
+    public List<Category> fetchCategories() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM categories");
+            ResultSet rs = stmt.executeQuery();
+            return listCats(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    @Override
+    public Long edit(Ad ad) {
+        return null;
+    }
+
+    private List<Category> listCats(ResultSet rs) throws SQLException {
+        List<Category> cats = new ArrayList<>();
+        while (rs.next()) {
+            cats.add(extractCategory(rs));
+        }
+        return cats;
+    }
+
+
+    private Category extractCategory(ResultSet rs) throws SQLException {
+        return new Category(
+                rs.getLong("id"),
+                rs.getString("category")
+        );
     }
 
     @Override
