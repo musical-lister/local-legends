@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,4 +21,9 @@ public interface Ads {
     void deleteAd(long ad_id) throws SQLException;
     //deletes the categories related to ad deletion
     void deleteCategories(long ad_cat) throws SQLException;
+    //lists all categories
+    List<Category> fetchCategories();
+    //edits advertisement
+    Long edit(Ad ad);
+    //
 }
