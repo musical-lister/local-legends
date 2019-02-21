@@ -90,3 +90,6 @@ input.search-query {
     background-size: cover;
     color: #FDBF03;
 }
+.inputBackground {
+    background: rgba(39,25,25, .7);
+}

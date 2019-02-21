@@ -17,7 +17,6 @@
                 <div class="card-body">
                     <a class="card-title" href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
                     <p class="card-text">${ad.description}</p>
-                    <button class="btn btn-danger" onclick="window.location.href = 'ads/delete?AdID=${ad.id}'">Delete</button>
                 </div>
             </div>
         </c:forEach>
