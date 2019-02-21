@@ -1,24 +1,24 @@
 package com.codeup.adlister.models;
 
 public class Category {
-    private int catId;
-    private int adId;
+    private long catId;
+    private String name;
 
-    public Category(int adId, int catId){
+    public Category(long catId, String Category){
         this.catId = catId;
-        this.adId = adId;
+        this.name = Category;
     }
 
-    public int getAdId() {
-        return adId;
+    public String getName() {
+        return name;
     }
 
-    public int getCatId() {
+    public long getCatId() {
         return catId;
     }
 
-    public void setAdId(int adId) {
-        this.adId = adId;
+    public void setName(String Category) {
+        this.name = Category;
     }
 
     public void setCatId(int catId) {
