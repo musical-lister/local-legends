@@ -18,6 +18,9 @@ h1.localLegends {
     margin: 5%;
     color: #FDBF03;
 }
+input.search-query {
+    background: rgba(39,25,25, .7);
+}
 .vertical {
     margin-top: 50%;
 }

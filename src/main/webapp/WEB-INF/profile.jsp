@@ -15,7 +15,7 @@
     <div class="container">
         <h4>Here are your posts!</h4>
         <c:forEach var="ad" items="${ads}">
-        <div class="card-group">
+        <div>
             <div style="width: 18rem;" class="m-2 d-inline-block">
                 <div class="card-body">
                     <h5 class="card-title">${ad.title}</h5>
@@ -47,10 +47,7 @@
         </div>
     </div>
 </div>
-
-
-    <button class="btn-secondary " onclick="window.location.href = '/ads/create';">Create Ad</button>
->>>>>>> master
+    <button class="btn-danger " onclick="window.location.href = '/ads/create';">Create Ad</button>
 <jsp:include page="partials/foot.jsp"/>
 </body>
 </html>
