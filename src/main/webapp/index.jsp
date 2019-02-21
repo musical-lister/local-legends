@@ -9,9 +9,9 @@
 <body class="landingPage">
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
         <div class="box mt-3">
-            <div class="container">
+            <div class="container text-center">
             <h1 class="localLegends">Welcome to Local Legends</h1>
-            <p style="margin-left: 15%; color: #FCC624;">Musical Adlister</p>
+            <h5 style="color: #FCC624;">Musical Adlister</h5>
             </div>
         </div>
     <jsp:include page="/WEB-INF/partials/foot.jsp"/>

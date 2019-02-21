@@ -3,7 +3,6 @@ package com.codeup.adlister.controllers;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
 import com.codeup.adlister.util.Password;
-import jdk.nashorn.internal.ir.RuntimeNode;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -15,10 +15,9 @@
     <div class="container">
         <h4>Here are your posts!</h4>
         <c:forEach var="ad" items="${ads}">
-        <div>
             <div style="width: 18rem;" class="m-2 d-inline-block">
                 <div class="card-body">
-                    <h5 class="card-title">${ad.title}</h5>
+                    <a href="/ads/show?id=${ad.id}"><h5>${ad.title}</h5></a>
                     <p class="card-text">${ad.description}</p>
                     <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
                 </div>
@@ -44,11 +43,9 @@
                     </div>
                 </div>
             </c:forEach>
+        <button class="btn btn-danger " onclick="window.location.href = '/ads/create';">Create Ad</button>
         </div>
     </div>
-</div>
-
-    <button class="btn-danger " onclick="window.location.href = '/ads/create';">Create Ad</button>
 <jsp:include page="partials/foot.jsp"/>
 </body>
 </html>

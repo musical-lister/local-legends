@@ -5,7 +5,7 @@
                     <a class="navbar-brand" href="/ads">Local Legends</a>
                         <%--search bar--%>
                         <form action="/ads" class="form-inline my-2 my-lg-0">
-                            <input class="form-control" style="background: rgba(39,25,25, .7);" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
+                            <input class="form-control inputBackground" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
                         </form>
                         <%--categories--%>
                             <div class="nav-item dropdown">
@@ -31,9 +31,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/logout">Logout</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/settings">Settings</a>
-                            </li>
+                            <%--<li class="nav-item">--%>
+                                <%--<a class="nav-link" href="/settings">Settings</a>--%>
+                            <%--</li>--%>
                         </ul>
                     </div>
                 </nav>
@@ -42,7 +42,7 @@
                 <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(39,25,25, .7);">
                     <a class="navbar-brand" href="/ads">Local Legends</a>
                     <form action="/ads" class="form-inline my-2 my-lg-0">
-                        <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search" style="background: rgba(39,25,25, .7);">
+                        <input class="form-control inputBackground" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
                     </form>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>

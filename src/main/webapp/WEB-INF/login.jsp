@@ -17,11 +17,11 @@
             <form action="/login" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input id="username" name="username" class="form-control" type="text" pattern="[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" value="${stickyUser}" required autofocus>
+                    <input id="username" name="username" class="form-control inputBackground" type="text" pattern="[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$" value="${stickyUser}" required autofocus>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" name="password" class="form-control" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <input id="password" name="password" class="form-control inputBackground" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                 </div>
                 <c:if test="${sessionScope.validAttempt == false}">
                     <jsp:include page="partials/messages.jsp"/>
