@@ -5,27 +5,28 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
-    <link href="../css/main.css" rel="stylesheet">
 </head>
-<body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
+<body class="profilePage">
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<div class="mt-3 box">
+    <div class="container mt-3">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
 
     <div class="container">
         <h4>Here are your posts!</h4>
         <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <a href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
-
-            <p>${ad.description}</p>
-            <button class="btn btn-danger" onclick="window.location.href = 'ads/delete?AdID=${ad.id}'">Delete</button>
-        </div>
+            <div style="width: 18rem;" class="m-2 d-inline-block">
+                <div class="card-body">
+                    <h5 class="card-title">${ad.title}</h5>
+                    <p class="card-text">${ad.description}</p>
+                    <button class="btn btn-danger" onclick="window.location.href = 'ads/delete?AdID=${ad.id}'">Delete</button>
+                </div>
+            </div>
         </c:forEach>
+        <button class="btn btn-primary m-3" onclick="window.location.href = '/ads/create';">Create Ad</button>
     </div>
-
-    <button class="btn-secondary" onclick="window.location.href = '/ads/create';">Create Ad</button>
+</div>
 <jsp:include page="partials/foot.jsp"/>
 </body>
 </html>

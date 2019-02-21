@@ -10,9 +10,10 @@
         input:required:valid {background-color: white; color: black;}
     </style>
 </head>
-<body>
+<body class="registerPage">
     <jsp:include page="partials/navbar.jsp" />
-    <div class="container">
+    <div class="box mt-3">
+    <div class="container mb-3">
         <h1>Register Now!</h1>
         <form action="/register" method="post">
             <div class="form-group">
@@ -36,6 +37,7 @@
                 </c:if>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
+    </div>
     </div>
 <jsp:include page="partials/foot.jsp"/>
 </body>

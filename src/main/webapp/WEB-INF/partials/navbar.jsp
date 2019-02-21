@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <c:choose>
             <c:when test="${sessionScope.user != null}">
-                <nav class="navbar navbar-expand-lg navbar-dark" style="background: #271919;">
+                <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(39,25,25, .7)">
                     <a class="navbar-brand" href="/ads">Local Legends</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="/profile">Profile</a>
                             </li>
                             <li class="nav-item">
@@ -25,8 +25,9 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Venue</a>
                                     <a class="dropdown-item" href="#">Music</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">General</a>
+                                    <a class="dropdown-item" href="#">Merchandise</a>
+                                    <%--<div class="dropdown-divider"></div>--%>
                                 </div>
                             </li>
                         </ul>
@@ -38,7 +39,7 @@
                 </nav>
             </c:when>
             <c:otherwise>
-                <nav class="navbar navbar-expand-lg navbar-dark" style="background: #271919;">
+                <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(39,25,25, .7);">
                     <a class="navbar-brand" href="/ads">Local Legends</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="/login">Login</a>
                             </li>
                             <li class="nav-item">
@@ -59,8 +60,8 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Venue</a>
                                     <a class="dropdown-item" href="#">Music</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">General</a>
+                                    <a class="dropdown-item" href="#">Merchandise</a>
                                 </div>
                             </li>
                         </ul>
