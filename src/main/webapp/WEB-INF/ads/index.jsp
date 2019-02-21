@@ -6,17 +6,22 @@
         <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
 </head>
-<body>
+<body class="adsPage">
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container">
-    <h1>${searchMessage}</h1>
+<div class="mt-3 box">
+    <div class="container">
+        <h1 class="mt-2">${searchMessage}</h1>
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-6">
-            <a href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
-            <p>${ad.description}</p>
-        </div>
-    </c:forEach>
+        <c:forEach var="ad" items="${ads}">
+            <div style="width: 18rem;" class="m-2 d-inline-block">
+                <div class="card-body">
+                    <a class="card-title" href="/ads/show?id=${ad.id}"><h2>${ad.title}</h2></a>
+                    <p class="card-text">${ad.description}</p>
+                    <button class="btn btn-danger" onclick="window.location.href = 'ads/delete?AdID=${ad.id}'">Delete</button>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 </div>
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>

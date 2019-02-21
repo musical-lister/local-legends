@@ -7,12 +7,14 @@
         <jsp:param name="title" value="Ad Page" />
     </jsp:include>
 </head>
-<body>
+<body class="adPage">
 <jsp:include page="../partials/navbar.jsp" />
-<div class="text-center">
-    <%--<img src="${adImage}">--%>
-    <h1>${adTitle}</h1>
-    <p>${adDescription}</p>
+<div class="box">
+    <div class="text-center mt-3">
+        <h1>${adTitle}</h1>
+        <p>${adDescription}</p>
+        <p>${sessionScope.user.username}</p>
+    </div>
 </div>
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
