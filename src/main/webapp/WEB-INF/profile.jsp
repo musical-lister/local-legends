@@ -47,6 +47,7 @@
         </div>
     </div>
 </div>
+
     <button class="btn-danger " onclick="window.location.href = '/ads/create';">Create Ad</button>
 <jsp:include page="partials/foot.jsp"/>
 </body>
