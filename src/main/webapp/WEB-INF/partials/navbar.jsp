@@ -5,8 +5,7 @@
                     <a class="navbar-brand" href="/ads">Local Legends</a>
                         <%--search bar--%>
                         <form action="/ads" class="form-inline my-2 my-lg-0">
-                            <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                            <input class="form-control" style="background: rgba(39,25,25, .7);" name="search" id="search" type="text" placeholder="Search" aria-label="Search">
                         </form>
                         <%--categories--%>
                             <div class="nav-item dropdown">
@@ -16,8 +15,8 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Venue</a>
                                     <a class="dropdown-item" href="#">Music</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">General</a>
+                                    <a class="dropdown-item" href="#">Merchandise</a>
                                 </div>
                             </div>
                         <%--dropdown menu--%>
@@ -42,6 +41,9 @@
             <c:otherwise>
                 <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgba(39,25,25, .7);">
                     <a class="navbar-brand" href="/ads">Local Legends</a>
+                    <form action="/ads" class="form-inline my-2 my-lg-0">
+                        <input class="form-control" name="search" id="search" type="text" placeholder="Search" aria-label="Search" style="background: rgba(39,25,25, .7);">
+                    </form>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
