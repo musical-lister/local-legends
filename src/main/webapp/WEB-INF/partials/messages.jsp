@@ -6,20 +6,26 @@
 <div class="alert alert-danger m-1">
 
     <%--login error message--%>
-    <c:out value="${errorMessageLogin}"/>
-
+    <c:if test="${validAttempt==false}">
+        <c:out value="${errorMessageLogin}"/>
+    </c:if>
 
 
     <%--register error messages--%>
-    <c:out value="${errorMessageUsername}"/>
-    <%--<c:if test="${sessionScope.errorMessageUsername}" >--%>
-        <%--<br><br>--%>
-    <%--</c:if>--%>
-    <c:out value="${errorMessageEmail}"/>
-    <%--<c:if test="${sessionScope.errorMessageEmail}" >--%>
-        <%--<br><br>--%>
-    <%--</c:if>--%>
-    <c:out value="${errorMessagePassword}"/>
+    <c:if test="${inputHasErrors==true}">
+        <c:out value="${errorMessageUsername}"/>
+        <br>
+    </c:if>
+    <c:if test="${inputHasErrors==true}" >
+        <br>
+        <c:out value="${errorMessageEmail}"/>
+        <br>
+    </c:if>
+    <c:if test="${inputHasErrors==true}" >
+        <br>
+        <c:out value="${errorMessagePassword}"/>
+        <br>
+    </c:if>
 
 
 

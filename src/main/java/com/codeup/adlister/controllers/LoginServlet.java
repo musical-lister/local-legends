@@ -18,36 +18,31 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/profile");
             return;
         }
+        request.getSession().removeAttribute("validAttempt");
         request.getSession().setAttribute("loginMessage", "Please Login");
-
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException  {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
+        // checks if the username is already taken
+        boolean userRegistered = DaoFactory.getUsersDao().isAlreadyRegisteredUsername(username);
 
-        if (user == null) {
-            response.sendRedirect("/login");
-            request.getSession().setAttribute("stickyUser", username);
+        boolean validAttempt = (user != null) && (userRegistered) && (Password.check(password, user.getPassword()));
+
+        // determines if login is successful
+        if (!validAttempt) {
+            request.setAttribute("stickyUser", username);
             request.getSession().setAttribute("validAttempt", false);
             request.getSession().setAttribute("errorMessageLogin", "Either username or password is incorrect. Please try again.");
-            return;
-        }
-
-        boolean validAttempt = Password.check(password, user.getPassword())
-                || DaoFactory.getUsersDao().isAlreadyRegisteredUsername(username);
-
-        if (validAttempt) {
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+        } else {
+            request.getSession().setAttribute("validAttempt", true);
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
-        } else {
-            request.getSession().setAttribute("stickyUser", username);
-            response.sendRedirect("/login");
-
-
         }
     }
 }
