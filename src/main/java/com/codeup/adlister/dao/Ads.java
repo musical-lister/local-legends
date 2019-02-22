@@ -19,8 +19,6 @@ public interface Ads {
     Ad singleAd (long adId) throws SQLException;
     //deletes the ad
     void deleteAd(long ad_id) throws SQLException;
-    //deletes the categories related to ad deletion
-    void deleteCategories(long ad_cat) throws SQLException;
     //lists all categories
     List<Category> fetchCategories();
     //edits advertisement
